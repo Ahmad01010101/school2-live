@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-bi3ty0*uag$r$zybqyt(zlosp6l9dyr$q#w2$1nbk6e%qd*$b*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['school2-project.herokuapp.com' , '127.0.0.1']
+ALLOWED_HOSTS = ['school2-proj.herokuapp.com' , '127.0.0.1']
 
 
 # Application definition
@@ -61,6 +61,7 @@ REST_FRAMEWORK = {
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
