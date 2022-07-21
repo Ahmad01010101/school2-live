@@ -72,7 +72,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
 ]
 
-ROOT_URLCONF = ['school2.urls' , 'requirements.txt' , 'Procfile' , 'runtime.txt' ]
+ROOT_URLCONF = ['school2.urls'  , 'requirements.txt' , 'Procfile' , 'runtime.txt' ]
 
 TEMPLATES = [
     {
@@ -99,7 +99,7 @@ WSGI_APPLICATION = 'school2.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME':'school2_db',
+        'NAME':os.path.join(BASE_DIR , 'db.sqlite3'),
         'HOST': '127.0.0.1',
         'PORT': 27017
     }
@@ -140,7 +140,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 STATIC_ROOT = os.path.join(BASE_DIR , 'staticfiles')
-STATIC_URL = 'static/'
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [ os.path.join(BASE_DIR , 'static') ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
